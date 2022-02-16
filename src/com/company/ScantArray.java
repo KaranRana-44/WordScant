@@ -72,6 +72,7 @@ public class ScantArray {
                 entries.set(i,new ScantArrayEntry(bruh.getRow(), bruh.getColumn()-1, bruh.getValue()));
             }
         }
+        numColumns--;
     }
 
     /** Allows the ScantArray to be printed.  The
@@ -86,9 +87,16 @@ public class ScantArray {
     public String toString(){
         /* part c */
         String s = "";
+        ArrayList<ScantArrayEntry> k=entries;
 
+        for(int i=0; i<numRows; i++){
+            for(int j=0; j<numColumns; j++){
+                s+=getValueAt(i,j);
+                s+=" ";
+            }
+            s+="\n";
 
-
+        }
         return s;
     }
 
