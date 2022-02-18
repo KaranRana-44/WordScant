@@ -46,11 +46,8 @@ public class ScantArray {
      *                0 <= col < getNumColumns()
      */
     public int getValueAt(int row, int col){
-        for(ScantArrayEntry i:entries) {
-            if (i.getColumn() == col && i.getRow() == row) {
-                return i.getValue();
-            }
-        }
+        for(ScantArrayEntry i:entries){
+            if (i.getColumn() == col && i.getRow() == row) {return i.getValue();} }
         return 0;
     }
 
@@ -62,13 +59,14 @@ public class ScantArray {
      */
     public void removeColumn(int col){
         /* part b */
-        for (int i=0; i<numColumns; i++) {
+        for (int i=0; i<entries.size(); i++) {
             ScantArrayEntry bruh= entries.get(i);
             if(bruh.getColumn()==col){
                 entries.remove(i);
+                i--;
             }
             else if(bruh.getColumn()>col){
-                entries.remove(i);
+
                 entries.set(i,new ScantArrayEntry(bruh.getRow(), bruh.getColumn()-1, bruh.getValue()));
             }
         }
@@ -117,6 +115,13 @@ public class ScantArray {
 
         sa1.removeColumn(1);
         System.out.println(sa1);
+
+        sa1.removeColumn(3);
+        System.out.println(sa1);
+        System.out.println(sa1.getValueAt(2,3));
+        System.out.println("rows "+ sa1.getNumRows());
+        System.out.println("columns "+ sa1.getNumColumns());
+
 
         /******* please add one more test of your own *******/
     }

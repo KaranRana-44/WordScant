@@ -42,6 +42,13 @@ public class WordDuoList {
      */
     public WordDuoList(String[] words){
         /* part A */
+        allDuos= new ArrayList<WordDuo>();
+
+        for(int i=0; i<words.length; i++){
+            for(int j=1+i; j< words.length; j++){
+                allDuos.add(new WordDuo(words[i], words[j]));
+            }
+        }
 
 
 
@@ -72,11 +79,14 @@ public class WordDuoList {
     ("fox", "red"), ("the", "red")
      */
     public int numMatches(){
-        /* part B  */
+        int count=0;
+        for(int i=0; i<allDuos.size(); i++){
+            if(allDuos.get(i).getFirst()==allDuos.get(i).getSecond()){
+                count++;
+            }
+        }
+        return count;
 
-
-
-        return 0;  // replace this
     }
 
     /*Write the method moveMatchesToTop()  THis method will look for
@@ -91,6 +101,13 @@ public class WordDuoList {
      */
     public void moveMatchesToTop(){
         /* part c */
+        for(int i=0; i<allDuos.size(); i++){
+            if(allDuos.get(i).getFirst()==allDuos.get(i).getSecond()){
+                allDuos.add(0,allDuos.get(i));
+                allDuos.remove(i+1);
+
+            }
+        }
 
 
 
