@@ -122,6 +122,26 @@ public class ScantArray {
         System.out.println("rows "+ sa1.getNumRows());
         System.out.println("columns "+ sa1.getNumColumns());
 
+        System.out.println();
+        System.out.println("new Scant");
+
+        ScantArray sa2 = new ScantArray(6,5);
+        sa2.addEntry(1,5,4);
+        sa2.addEntry(2,3,1);
+        sa2.addEntry(6,1,-9);
+        sa2.addEntry(4,4,5);
+
+        System.out.println(sa2.getValueAt(1,5));
+        System.out.println(sa2.getValueAt(6,1));
+        System.out.println(sa2.getValueAt(2,2));
+        System.out.println("rows "+ sa2.getNumRows());
+        System.out.println("columns "+ sa2.getNumColumns());
+
+        System.out.println(sa2);
+
+        sa2.removeColumn(1);
+        System.out.println(sa2);
+
 
         /******* please add one more test of your own *******/
     }
