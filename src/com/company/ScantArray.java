@@ -126,9 +126,11 @@ public class ScantArray {
         System.out.println("new Scant");
 
         ScantArray sa2 = new ScantArray(6,5);
-        sa2.addEntry(1,5,4);
+
+        //add entry has to be one less than the "actual" number of rows/ cols
+        sa2.addEntry(1,3,4);
         sa2.addEntry(2,3,1);
-        sa2.addEntry(6,1,-9);
+        sa2.addEntry(5,1,-9);
         sa2.addEntry(4,4,5);
 
         System.out.println(sa2.getValueAt(1,5));
@@ -143,6 +145,5 @@ public class ScantArray {
         System.out.println(sa2);
 
 
-        /******* please add one more test of your own *******/
     }
 }
